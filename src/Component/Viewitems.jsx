@@ -1,17 +1,25 @@
 import React from 'react'
 
-const Viewitems = ({product , increment}) => {
+const Viewitems = ({product , increment , decrement, Delete}) => {
     return (
-        <div className='flex justify-evenly bg-slate-500 text-gray-50 mb-3'>
-        <span>name : {product.name}</span>
-        <span>price : {product.price}</span>
-        <span>count : {product.count}</span>
-        <button className='btn bg-success' onClick={()=>increment(product.id)}>+</button>
-        <button className='btn bg-warning'>-</button>
-        <button className='btn bg-error'>Del</button>
-        <span> total : 100</span>
-        <br/>
+        //============================================
+        <div className="card bg-gray-400 w-80">
+            <figure>
+                <img src={product.src} alt="Shoes" />
+            </figure>
+            <div className="card-body text-center">
+                <p className='text-red-500'>Count : {product.count} </p>
+                <p > price : {product.price}$ </p>
+                <p className='text-3xl'>SubTotal : {product.subtotal}$ </p>
+                <br />
+                <div className="flex justify-between">
+                     <button className='btn bg-success' onClick={()=>increment(product.id)}>Add</button>               
+                     <button className='btn bg-warning' onClick={()=>decrement(product.id)}>remove</button>               
+                     <button className='btn bg-error' onClick={()=>Delete(product.id)}>Del</button>               
+                </div>
+            </div>
         </div>
+        // =============================================
     )
 }
 
