@@ -1,6 +1,9 @@
 import Cart from "./Component/Cart.jsx";
-import {useState} from 'react'
+import {useState } from 'react'
 import {Header} from './Component/Header.jsx'
+import {Routes,Route,useNavigate} from 'react-router-dom'
+import CheckOut from "./Component/CheckOut.jsx";
+
 
 const App = () => {
   let [products,setProducts] = useState(
@@ -50,12 +53,26 @@ const App = () => {
     setamount(amount-(productToDelete.count));
   };
   // ===============================================
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    navigate('/checkOut');  
+  };
+  // ===============================================
 
   return(
     <>
     <Header amount={amount}/>
     <Cart products={products} increment={increment} decrement={decrement} Delete={Delete} />
-    <div className=" mt-5 text-center text-5xl">  {TotalPaid === 0 ? "Empty Cart" : `Total Paid: ${TotalPaid}`}</div>
+    <Routes>
+      <Route path="/CheckOut" element={<CheckOut/>}></Route>
+    </Routes>
+    <div className="flex justify-evenly mt-5">
+        <span className=" mt-5 text-center text-5xl">  {TotalPaid === 0 ? "Empty Cart" : `Total Paid: ${TotalPaid}`}</span>
+        <button className="btn btn-dash bg-red-400 btn-lg"onClick={handleCheckout} disabled={TotalPaid === 0}>
+          CheckOut
+        </button>
+    </div>
     </>
   );
 };

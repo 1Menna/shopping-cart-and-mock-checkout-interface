@@ -8,6 +8,7 @@ const Viewitems = ({product , increment , decrement, Delete}) => {
                 <img src={product.src} alt="Shoes" />
             </figure>
             <div className="card-body text-center">
+                <div className='text-3xl text-center '>Product {product.id}</div>
                 <p className='text-red-500'>Count : {product.count} </p>
                 <p > price : {product.price}$ </p>
                 <p className='text-3xl'>SubTotal : {product.subtotal}$ </p>
