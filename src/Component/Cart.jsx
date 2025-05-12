@@ -7,7 +7,7 @@ const Cart = ({products , TotalPaid , increment , decrement , Delete}) => {
          navigate('/checkOut');  
     };
     return (
-        <div className="flex justify-between">
+        <div className="flex justify-center gap-10">
         {products.map((product,index)=>
             (
                 <Viewitems product={product} increment={increment} decrement={decrement} Delete={Delete} key={index}/>
