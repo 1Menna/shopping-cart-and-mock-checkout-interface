@@ -3,7 +3,7 @@ import React from 'react'
 const Viewitems = ({product , increment , decrement, Delete}) => {
     return (
         //============================================
-        <div className="card max-w-2xl bg-gray-400 w-80">
+        <div className="card max-w-1xl bg-gray-400 w-80">
             <figure>
                 <img src={product.src} alt="Shoes" />
             </figure>
