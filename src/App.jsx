@@ -8,9 +8,9 @@ import CheckOut from "./Component/CheckOut.jsx";
 const App = () => {
   let [products,setProducts] = useState(
     [
-      {id:1 , src:'/public/product1.jpg' , price:100 , count:1 , subtotal:100},
-      {id:2 , src:'/public/product2.jpg' , price:200 , count:1 , subtotal:200},
-      {id:3 , src:'/public/product3.jpg' , price:300 , count:1 , subtotal:300},
+      {id:1 , src:'/product1.jpg' , price:100 , count:1 , subtotal:100},
+      {id:2 , src:'/product2.jpg' , price:200 , count:1 , subtotal:200},
+      {id:3 , src:'/product3.jpg' , price:300 , count:1 , subtotal:300},
     ]
   );
   let [TotalPaid,setTotalPaid] = useState(600);
