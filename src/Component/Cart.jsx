@@ -10,7 +10,7 @@ const Cart = ({ products, TotalPaid, increment, decrement, Delete }) => {
 
     return (
         <div className="flex flex-col items-center px-4 py-6">
-            <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div className="flex gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {products.map((product, index) => (
                     <Viewitems
                         product={product}
@@ -23,7 +23,7 @@ const Cart = ({ products, TotalPaid, increment, decrement, Delete }) => {
             </div>
 
             <div className="mt-10 text-center">
-                <span className="block text-3xl sm:text-4xl lg:text-5xl mb-4">
+                <span className="block text-3xl sm:text-2xl lg:text-3xl mb-4">
                     {TotalPaid === 0 ? "Empty Cart" : `Total Paid: $${TotalPaid}`}
                 </span>
                 <button
