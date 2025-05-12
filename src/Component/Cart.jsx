@@ -27,7 +27,7 @@ const Cart = ({ products, TotalPaid, increment, decrement, Delete }) => {
                     {TotalPaid === 0 ? "Empty Cart" : `Total Paid: $${TotalPaid}`}
                 </span>
                 <button
-                    className="btn bg-red-500 text-white px-6 py-3 rounded disabled:opacity-50"
+                    className="btn bg-red-400 text-white px-6 py-3 rounded disabled:opacity-50"
                     onClick={handleCheckout}
                     disabled={TotalPaid === 0}
                 >

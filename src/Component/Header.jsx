@@ -3,7 +3,7 @@ import { FaShoppingCart } from "react-icons/fa";
 
 export const Header = ({amount}) => {
   return (
-  <div className="navbar bg-gray-500 shadow-sm">
+  <div className="navbar bg-red-400 shadow-sm">
   {/*=============================================================*/}  
   <div className="flex-1">
     <a className="btn btn-ghost text-xl">Products</a>
