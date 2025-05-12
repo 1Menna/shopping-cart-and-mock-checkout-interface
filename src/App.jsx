@@ -53,26 +53,17 @@ const App = () => {
     setamount(amount-(productToDelete.count));
   };
   // ===============================================
-  const navigate = useNavigate();
-
-  const handleCheckout = () => {
-    navigate('/checkOut');  
-  };
+ 
   // ===============================================
 
   return(
     <>
     <Header amount={amount}/>
-    <Cart products={products} increment={increment} decrement={decrement} Delete={Delete} />
     <Routes>
+      <Route path="/" element={<Cart products={products} TotalPaid={TotalPaid}  increment={increment} decrement={decrement} Delete={Delete} />}></Route>
       <Route path="/CheckOut" element={<CheckOut/>}></Route>
     </Routes>
-    <div className="flex justify-evenly mt-5">
-        <span className=" mt-5 text-center text-5xl">  {TotalPaid === 0 ? "Empty Cart" : `Total Paid: ${TotalPaid}`}</span>
-        <button className="btn btn-dash bg-red-400 btn-lg"onClick={handleCheckout} disabled={TotalPaid === 0}>
-          CheckOut
-        </button>
-    </div>
+    
     </>
   );
 };
