@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Cart = ({ products, TotalPaid, increment, decrement, Delete }) => {
     const navigate = useNavigate();
     const handleCheckout = () => {
-        navigate('/checkOut');
+        navigate('/checkOut', { state: { TotalPaid, products } });
     };
 
     return (

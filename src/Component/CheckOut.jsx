@@ -1,34 +1,30 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 const CheckOut = () => {
+  const location = useLocation();
+  const TotalPaid = location.state?.TotalPaid || 0;
+  const products = location.state?.products || [];
   return (
     <div className="max-w-4xl mx-auto mt-10 bg-white rounded-lg shadow-lg overflow-hidden border">
       <div className="bg-gray-300 p-6 border-b">
         <h2 className="text-xl font-semibold mb-4">Checkout</h2>
         {/*________________________________________________*/}
-        <div className="mb-3">
-          <div className="flex justify-between">
-            <div>
-              <p className="font-semibold">Product 1</p>
-              <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet</p>
-            </div>
-            <p className="font-semibold">$200</p>
-          </div>
-        </div>
-        {/*________________________________________________*/}
-        <div className="mb-3">
-          <div className="flex justify-between">
-            <div>
-              <p className="font-semibold">Product 2</p>
-              <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet</p>
-            </div>
-            <p className="font-semibold">$120</p>
-          </div>
-        </div>
+        {products.map((product,index) => (
+                    <div key={index} className="mb-3">
+                      <div className="flex justify-between">
+                          <div>
+                           <p className="font-semibold">Product {product.id}</p>
+                           <p className="text-sm text-gray-500">count :{product.count}</p>
+                          </div>
+                          <p className="font-semibold">${product.subtotal}</p>
+                      </div>
+                    </div>
+       ))}
         {/*________________________________________________*/}
         <div className="border-t pt-3 flex justify-between">
           <p className="font-semibold">Total</p>
-          <p className="font-semibold">$320</p>
+          <p className="font-semibold">${TotalPaid}</p>
         </div>
         {/*________________________________________________*/}
       </div>

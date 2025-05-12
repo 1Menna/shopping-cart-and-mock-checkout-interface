@@ -2,7 +2,7 @@ import React from 'react';
 
 const Viewitems = ({ product, increment, decrement, Delete }) => {
     return (
-        <div className="card bg-gray-100 shadow-2xl shadow-gray-800 w-full max-w-sm mx-auto">
+        <div className="card bg-gray-100 shadow-2xl shadow-gray-800 w-full max-w- mx-auto">
             <figure className="p-4">
                 <img src={product.src} alt={`Product ${product.id}`} className="w-full h-48 object-cover rounded" />
             </figure>
@@ -13,9 +13,9 @@ const Viewitems = ({ product, increment, decrement, Delete }) => {
                 <p className="text-xl font-bold">SubTotal: ${product.subtotal}</p>
 
                 <div className="flex justify-center gap-3 mt-4 flex-wrap">
-                    <button className="btn bg-green-700 text-white px-4 py-2 rounded" onClick={() => increment(product.id)}>Add</button>
-                    <button className="btn bg-amber-700 text-white px-4 py-2 rounded" onClick={() => decrement(product.id)}>Remove</button>
-                    <button className="btn bg-red-700 text-white px-4 py-2 rounded" onClick={() => Delete(product.id)}>Del</button>
+                    <button className="btn bg-green-700  text-white px-4 py-2 rounded-3xl" onClick={() => increment(product.id)}>Add</button>
+                    <button className="btn bg-amber-700 text-white px-4 py-2 rounded-3xl" onClick={() => decrement(product.id)}>Remove</button>
+                    <button className="btn bg-red-700 text-white px-4 py-2 rounded-3xl" onClick={() => Delete(product.id)}>Del</button>
                 </div>
             </div>
         </div>
